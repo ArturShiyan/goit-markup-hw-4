@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -24,10 +25,28 @@
   width: 1600px;
 }
 .nav-logo-img {
-  justify-content: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  text-decoration: none;
   margin-right: 50px;
-  padding-top: 3px;
+}
+.nav-logo-img a {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 31px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  cursor: pointer;
+}
+.first-word {
+  font-style: sans-serif;
+  color: var(--hover-color);
+}
+.second-word {
+  color: var(--nav-color);
 }
 .nav-logo {
   display: flex;
@@ -66,9 +85,34 @@
 .contact {
   display: flex;
   list-style: none;
+  line-height: 80px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 35px;
+  line-height: 80px;
+  --color5: var(--second-color);
+}
+.contact-item-mail {
+  width: 16px;
+  height: 11px;
+  display: flex;
+  line-height: 80px;
+  margin-right: 10px;
+  --color5: var(--second-color);
+}
+.contact-item-phone {
+  width: 10px;
+  height: 15px;
+  --color5: var(--second-color);
+  display: flex;
+  line-height: 80px;
+  margin-right: 10px;
 }
 .contact-item:not(:last-child) {
-  margin-right: 50px;
+  margin-right: 30px;
 }
 .contact a {
   font-family: var(--font-family-nav);
@@ -76,22 +120,31 @@
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 12px;
   letter-spacing: 0.02em;
   color: #757575;
 }
-.nav-logo a:hover,
-.nav-logo a:focus {
+.contact-item:hover,
+.contact-item:focus {
+  --color5: var(--hover-color);
+}
+.contact-item-phone:hover,
+.contact-item-phone:focus,
+.contact-item-mail:hover,
+.contact-item-mail:focus,
+.email:hover,
+.email:focus,
+.smartphone:hover,
+.smartphone:focus {
+  --color5: var(--hover-color);
   color: var(--hover-color);
 }
+
 .nav-had a:hover,
 .nav-had a:focus {
   color: var(--hover-color);
 }
-.contact li:hover,
-.contact a:focus {
-  color: var(--hover-color);
-}
+
 .btn {
   position: absolute;
   width: 200px;
@@ -100,7 +153,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   left: 732px;
-  top: 440px;
+  top: 360px;
   vertical-align: center;
   align-items: center;
   text-align: center;
@@ -116,12 +169,12 @@
 .main-banner {
   width: 1600px;
 }
-.main-foto h1 {
+.overlay h1 {
   position: absolute;
   width: 696px;
   height: 120px;
   left: 452px;
-  top: 280px;
+  top: 200px;
   font-family: Roboto;
   font-style: normal;
   font-weight: 900;
@@ -132,37 +185,52 @@
   text-transform: uppercase;
   color: #ffffff;
 }
-
-.main-foto {
-  display: block;
-  width: 1600px;
+.banner {
+  width: 100%;
   height: 600px;
-  background-image: url("../img/photo/Headerimg.png");
+  background-image: url("../img/photo/Headerimg.jpg");
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
 }
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(47, 48, 58, 0.8);
+}
+
 .main-section {
   padding-top: 94px;
 }
 .cont-icon {
   display: flex;
+  align-items: center;
+  justify-content: center;
   list-style: none;
 }
-.icon {
-  width: 270px;
-  height: 251px;
+.icon:not(:last-child) {
   margin-right: 30px;
 }
-
-.icon a {
+.icon-fon {
   display: flex;
-  text-decoration: none;
+  align-items: center;
+  justify-content: center;
   width: 270px;
   height: 120px;
   background: #f5f4fa;
   border-radius: 4px;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 30px;
 }
+
+.sprite-icon {
+  width: 70px;
+  height: 70px;
+}
+
 .icon h3 {
   font-family: var(--font-family-nav);
   font-style: normal;
@@ -297,15 +365,22 @@
   margin-right: 10px;
   text-align: center;
 }
-.social-icon-item img:hover,
-.social-icon-item img:focus {
-  background: #2196f3;
+.social-icon-item-sprite {
+  --color3: #fff;
+  --color4: #afb1b8;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  color: #ffffff;
 }
+.social-icon-item-sprite:hover,
+.social-icon-item-sprite:focus {
+  --color3: var(--hover-color);
+  --color4: var(--main-white-color);
+}
+
 /*портфолио*/
+.had-nav-logo {
+  margin-bottom: 100px;
+}
 
 .pfnav button {
   font-family: var(--font-family-nav);
@@ -416,16 +491,38 @@
 .icon-client-item:not(:last-child) {
   margin-right: 30px;
 }
-
 .icon-client-item:hover,
 .icon-client-item:focus {
   border: 1px solid var(--hover-color);
-  color: var(--hover-color);
+  --color4: var(--hover-color);
 }
-.icon-client img:hover,
-.icon-client img:focus {
-  background-color: var(--hover-color);
+
+.icon-client-logo-first {
+  width: 44px;
+  height: 50px;
 }
+.icon-client-logo-second {
+  width: 40px;
+  height: 52px;
+}
+.icon-client-logo-third {
+  width: 41px;
+  height: 43px;
+}
+.icon-client-logo-fourth {
+  width: 80px;
+  height: 42px;
+}
+.icon-client-logo-fifth {
+  width: 59px;
+  height: 47px;
+}
+.icon-client-logo-sixth {
+  width: 88px;
+  height: 45px;
+}
+/*Футтер*/
+
 .foot-position {
   display: flex;
   padding-top: 60px;
@@ -482,6 +579,23 @@
   list-style: none;
   margin-right: 10px;
 }
+.foot-logo a {
+  font-family: "Raleway", sans-serif;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 31px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  cursor: pointer;
+}
+.ffword {
+  color: var(--hover-color);
+}
+.sfword {
+  color: var(--main-white-color);
+}
 .foot-logo {
   margin-bottom: 20px;
 }
@@ -497,6 +611,12 @@
   text-transform: uppercase;
   color: #ffffff;
 }
+.social-icon-item-foot-sprite {
+  width: 44px;
+  height: 44px;
+  --color3: rgb(62, 63, 73);
+  --color4: var(--main-white-color);
+}
 .social-item {
   display: flex;
   width: 44px;
@@ -506,8 +626,10 @@
   justify-content: center;
   align-items: center;
 }
-.social:hover .social-item :focus {
-  background-color: var(--hover-color);
+.social-icon-item-foot-sprite:hover {
+  --color3: var(--hover-color);
+  --color4: var(--main-white-color);
+  border-radius: 50%;
 }
 .social-form form {
   width: 358px;
@@ -547,7 +669,13 @@
   line-height: 30px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   letter-spacing: 0.06em;
   color: #ffffff;
   padding-left: 29px;
+  padding-right: 25px;
+}
+.icon-send {
+  width: 24px;
+  height: 24px;
 }
