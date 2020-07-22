@@ -192,6 +192,8 @@
   background-size: cover;
   position: relative;
   overflow: hidden;
+  margin-left: 0;
+  margin-right: 0;
 }
 .overlay {
   display: flex;
