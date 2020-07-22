@@ -21,6 +21,9 @@
   margin-right: auto;
 }
 /*Хедер*/
+.nav-container {
+  width: 1600px;
+}
 .had-nav-logo {
   width: 1600px;
 }
