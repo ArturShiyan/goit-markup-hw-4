@@ -51,6 +51,8 @@
 .nav-logo {
   display: flex;
   line-height: 80px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .had-container {
   margin-bottom: 93px;
